@@ -5,27 +5,29 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/m/multiurl/multiurl-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/m/multiurl/multiurl-{{ version }}.tar.gz
   sha256: f4d0b69dcf4a0ed740daa313dbcd4d5665420d305c50ca879285e96dc828093f
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - python-dateutil
     - pytz
     - requests
     - tqdm
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - multiurl
 
