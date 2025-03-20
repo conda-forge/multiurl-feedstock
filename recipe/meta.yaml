@@ -1,4 +1,4 @@
-{% set version = "0.3.3" %}
+{% set version = "0.3.5" %}
 
 package:
   name: multiurl
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/m/multiurl/multiurl-{{ version }}.tar.gz
-  sha256: f4d0b69dcf4a0ed740daa313dbcd4d5665420d305c50ca879285e96dc828093f
+  sha256: c2fb8b85227caa453fa0c9e711c5a83e3fd6d9a30b5010ce8a8a4e872d31211e
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
